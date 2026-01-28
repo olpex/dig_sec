@@ -168,7 +168,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Apply animation to cards and elements
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li');
+    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item');
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';

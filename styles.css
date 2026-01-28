@@ -100,16 +100,15 @@ nav a.active {
     padding: 5rem 5%;
 }
 
+.section.dark {
+    background: var(--darker);
+    color: white;
+}
+
 .section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--dark);
-}
-
-.section.dark {
-    background: var(--darker);
-    color: white;
 }
 
 .section.dark h2 {
@@ -118,12 +117,19 @@ nav a.active {
 
 .section-intro {
     text-align: center;
+    font-size: 1.2rem;
     color: var(--gray);
     margin-bottom: 3rem;
-    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Cards */
+.section.dark .section-intro {
+    color: #94a3b8;
+}
+
+/* CIA Triad */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -134,15 +140,14 @@ nav a.active {
 
 .card {
     background: white;
-    border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .card-icon {
@@ -151,85 +156,82 @@ nav a.active {
 }
 
 .card h3 {
-    color: var(--primary);
     margin-bottom: 1rem;
+    color: var(--primary);
 }
 
 .card ul {
+    list-style: none;
     margin-top: 1rem;
-    padding-left: 1.5rem;
 }
 
 .card li {
     margin-bottom: 0.5rem;
-    color: var(--gray);
+    padding-left: 1.5rem;
+    position: relative;
 }
 
-/* Principles Grid */
+.card li::before {
+    content: "•";
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Principles */
 .principles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
-    margin: 3rem auto 0;
+    margin: 0 auto;
 }
 
 .principle {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     padding: 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background 0.3s;
-}
-
-.principle:hover {
-    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
 }
 
 .principle h3 {
+    color: #60a5fa;
     margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.principle p {
-    opacity: 0.9;
-    line-height: 1.7;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Threats */
 .threats-list {
-    max-width: 800px;
-    margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .threat {
-    display: flex;
-    gap: 1.5rem;
     background: white;
     padding: 1.5rem;
     border-radius: 12px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-}
-
-.threat:hover {
-    transform: translateX(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
 
 .threat-icon {
     font-size: 2.5rem;
-    flex-shrink: 0;
+    background: #eff6ff;
+    padding: 1rem;
+    border-radius: 50%;
 }
 
-.threat-content h3 {
-    color: var(--dark);
+.threat h3 {
     margin-bottom: 0.5rem;
-}
-
-.threat-content p {
-    color: var(--gray);
-    margin-bottom: 0.75rem;
+    color: var(--dark);
 }
 
 .severity {
@@ -237,122 +239,48 @@ nav a.active {
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: bold;
+    margin-top: 0.5rem;
 }
 
 .severity.high {
-    background: #fef2f2;
+    background: #fee2e2;
     color: var(--danger);
 }
 
 .severity.medium {
-    background: #fffbeb;
+    background: #fef3c7;
     color: var(--warning);
 }
 
 /* Tips */
 .tips-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 3rem auto 0;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .tip {
-    position: relative;
-    padding: 2rem;
-    padding-left: 5rem;
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
 
 .tip-number {
-    position: absolute;
-    left: 0;
-    top: 1.5rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: var(--primary);
-    opacity: 0.5;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
 }
 
 .tip h3 {
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
-}
-
-.tip p {
-    opacity: 0.85;
-    line-height: 1.7;
-}
-
-/* Quiz */
-.quiz-section {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-}
-
-#quiz {
-    max-width: 600px;
-    margin: 2rem auto 0;
-}
-
-.quiz-question {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.quiz-question p:first-child {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.quiz-options button {
-    padding: 1rem;
-    border: 2px solid var(--gray);
-    border-radius: 8px;
-    background: white;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1rem;
-    transition: all 0.3s;
-}
-
-.quiz-options button:hover {
-    border-color: var(--primary);
-    background: #f0f9ff;
-}
-
-.quiz-options button.correct {
-    border-color: var(--secondary);
-    background: #d1fae5;
-}
-
-.quiz-options button.incorrect {
-    border-color: var(--danger);
-    background: #fee2e2;
-}
-
-.quiz-result {
-    margin-top: 1rem;
-    font-weight: 600;
-    min-height: 1.5rem;
-}
-
-.quiz-result.correct {
-    color: var(--secondary);
-}
-
-.quiz-result.incorrect {
-    color: var(--danger);
+    margin-bottom: 0.5rem;
+    color: #60a5fa;
 }
 
 /* Footer */
@@ -360,129 +288,143 @@ footer {
     background: var(--darker);
     color: white;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem 5%;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 footer p {
-    opacity: 0.8;
+    opacity: 0.7;
     margin-bottom: 0.5rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .principles-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tips-container {
-        grid-template-columns: 1fr;
-    }
-
-    .threat {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Selection */
-::selection {
-    background: var(--primary);
-    color: white;
-}
-
-/* Passwords Section */
-.password-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
+/* Quiz Section */
+.quiz-section {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.password-content h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.password-rules,
-.password-checker,
-.password-managers,
-.worst-passwords {
+.quiz-question {
     background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
 }
 
-.rules-grid {
+.quiz-question p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-options {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.rule {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+.quiz-options button {
+    padding: 1rem;
+    text-align: left;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.quiz-options button:hover {
+    background: #f1f5f9;
+    border-color: var(--primary);
+}
+
+.quiz-options button.correct {
+    background: #ecfdf5;
+    border-color: var(--secondary);
+    color: #065f46;
+}
+
+.quiz-options button.incorrect {
+    background: #fef2f2;
+    border-color: var(--danger);
+    color: #991b1b;
+}
+
+.quiz-result {
+    margin-top: 1rem;
+    font-weight: bold;
     padding: 1rem;
     border-radius: 8px;
+    display: none;
 }
 
-.rule.good {
+.quiz-result.correct {
+    display: block;
     background: #ecfdf5;
-    border-left: 4px solid var(--secondary);
+    color: #065f46;
 }
 
-.rule.bad {
+.quiz-result.incorrect {
+    display: block;
     background: #fef2f2;
-    border-left: 4px solid var(--danger);
+    color: #991b1b;
+}
+
+/* Password Checker */
+.password-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.password-checker, .password-rules, .password-managers, .worst-passwords {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.rule {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #f8fafc;
 }
 
 .rule-icon {
-    font-size: 1.5rem;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
-.rule.good .rule-icon {
-    color: var(--secondary);
-}
-
-.rule.bad .rule-icon {
-    color: var(--danger);
-}
+.rule.good .rule-icon { color: var(--secondary); }
+.rule.bad .rule-icon { color: var(--danger); }
 
 .rule strong {
     display: block;
+    font-size: 0.95rem;
     margin-bottom: 0.25rem;
 }
 
 .rule p {
+    font-size: 0.85rem;
     color: var(--gray);
-    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
-/* Password Checker */
 .checker-box {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -492,11 +434,10 @@ html {
     border: 2px solid #e2e8f0;
     border-radius: 8px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    outline: none;
 }
 
 .checker-box input:focus {
-    outline: none;
     border-color: var(--primary);
 }
 
@@ -946,14 +887,14 @@ html {
     margin: 0 auto;
 }
 
-.email-phishing, .email-tips {
+.email-phishing, .email-tips, .email-providers {
     background: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-.email-phishing h3, .email-tips h3 {
+.email-phishing h3, .email-tips h3, .email-providers h3 {
     color: var(--primary);
     margin-bottom: 1.5rem;
 }
@@ -1653,6 +1594,181 @@ html {
     border-radius: 3px;
 }
 
+/* --- NEW SECTIONS STYLES --- */
 
+/* OS Section */
+.os-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.os-category h3 {
+    color: var(--primary); /* Blue for Light section */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 0.5rem;
+}
 
+.os-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.os-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.os-card:hover {
+    transform: translateY(-3px);
+}
+
+.os-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.os-icon {
+    font-size: 2rem;
+}
+
+.os-card h4 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 1.2rem;
+}
+
+.os-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag.recommended {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.tag.best {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.tag.advanced {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.tag.specific {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+/* VPN Section */
+.wifi-vpn {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    grid-column: 1 / -1; /* Span full width if grid permits */
+}
+
+.wifi-vpn h3 {
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+}
+
+.wifi-vpn > p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+}
+
+.vpn-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.vpn-card {
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.vpn-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.vpn-icon {
+    font-size: 1.8rem;
+}
+
+.vpn-card h4 {
+    margin: 0;
+    color: white;
+}
+
+.vpn-card p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Email Providers */
+.email-providers {
+    /* inherits styles from existing .email-tips */
+}
+
+.provider-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.provider-item {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.provider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.provider-header strong {
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.provider-item p {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
