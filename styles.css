@@ -1632,6 +1632,27 @@ html {
     width: 0%;
 }
 
+/* CIA Intro Visual */
+.cia-intro-visual {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cia-image {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Glossary Highlight */
+.highlight {
+    background-color: var(--warning); /* or any distinct color */
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
 
 
 
