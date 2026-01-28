@@ -272,19 +272,45 @@ function togglePassword() {
 }
 
 // Glossary search function
+// Store original HTML of glossary items
+const glossaryItems = document.querySelectorAll('.glossary-item');
+const originalGlossaryHtml = {};
+glossaryItems.forEach((item, index) => {
+    originalGlossaryHtml[index] = item.innerHTML;
+});
+
+function highlightText(text, filter) {
+    if (!filter) return text;
+    const regex = new RegExp(filter, 'gi');
+    return text.replace(regex, match => `<span class="highlight">${match}</span>`);
+}
+
 function filterGlossary() {
     const searchInput = document.getElementById('glossarySearch');
     const filter = searchInput.value.toLowerCase();
-    const glossaryItems = document.querySelectorAll('.glossary-item');
 
-    glossaryItems.forEach(item => {
-        const term = item.querySelector('strong').textContent.toLowerCase();
-        const definition = item.querySelector('p').textContent.toLowerCase();
+    glossaryItems.forEach((item, index) => {
+        const termElement = item.querySelector('strong');
+        const definitionElement = item.querySelector('p');
 
-        if (term.includes(filter) || definition.includes(filter)) {
+        const originalTerm = termElement.textContent;
+        const originalDefinition = definitionElement.textContent;
+
+        const termMatch = originalTerm.toLowerCase().includes(filter);
+        const definitionMatch = originalDefinition.toLowerCase().includes(filter);
+
+        if (termMatch || definitionMatch) {
             item.classList.remove('hidden');
+            termElement.innerHTML = highlightText(originalTerm, filter);
+            definitionElement.innerHTML = highlightText(originalDefinition, filter);
         } else {
             item.classList.add('hidden');
+        }
+
+        // Restore original content if filter is empty
+        if (!filter) {
+            item.innerHTML = originalGlossaryHtml[index];
+            item.classList.remove('hidden');
         }
     });
 }
@@ -314,11 +340,63 @@ function openTab(evt, tabName) {
 
 // Set default active tab on load
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Other existing DOMContentLoaded logic...
-
-    // Open the first tab by default
-    const defaultTab = document.querySelector('.tab-link');
     if (defaultTab) {
         defaultTab.click();
     }
+});
+
+// Back to Top Button functionality
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+}
+
+backToTopBtn.addEventListener('click', () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
+
+// Highlight active navigation link on scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav ul li a');
+
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.7 // Highlight when 70% of the section is visible
+};
+
+const observerNav = new IntersectionObserver((entries, observerNav) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const currentId = entry.target.id;
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentId)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    } 
+}, options);
+
+sections.forEach(section => {
+    observerNav.observe(section);
+});
+
+// Scroll Progress Bar functionality
+window.addEventListener('scroll', () => {
+    const progressBar = document.getElementById('progressBar');
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    progressBar.style.width = progress + '%';
 });
