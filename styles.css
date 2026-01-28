@@ -1352,3 +1352,238 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* Messenger Security Section */
+.messengers-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.messenger-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+
+.messenger-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.messenger-table th,
+.messenger-table td {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.messenger-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--dark);
+    position: sticky;
+    top: 0;
+}
+
+.messenger-table tr:last-child td {
+    border-bottom: none;
+}
+
+.messenger-table td:first-child {
+    font-weight: 600;
+}
+
+.messenger-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.messenger-logo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.feature-check {
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.feature-cross {
+    color: var(--danger);
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.feature-warning {
+    color: var(--warning);
+    font-weight: bold;
+}
+
+.security-score {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.score-high {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.score-medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.score-low {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.messenger-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.messenger-tip {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.messenger-tip h4 {
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.messenger-tip p {
+    font-size: 0.95rem;
+    color: var(--gray);
+}
+
+/* Tabs for Messengers and Browsers */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.tab-link {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gray);
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab-link.active,
+.tab-link:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Comparison Table */
+.comparison-table {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin: 2rem 0;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.comparison-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.comparison-table td.text-center {
+    text-align: center;
+}
+
+.comparison-table .icon-good::before {
+    content: '✓';
+    color: var(--secondary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.comparison-table .icon-medium::before {
+    content: '~';
+    color: var(--warning);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.comparison-table .icon-bad::before {
+    content: '✗';
+    color: var(--danger);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Hardening Tips */
+.hardening-tips {
+    list-style: none;
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.hardening-tips li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid var(--primary);
+}
+
+.hardening-tips .tip-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+

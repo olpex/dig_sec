@@ -168,7 +168,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Apply animation to cards and elements
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question');
+    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li');
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -176,6 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(el);
     });
+
+    // Open the first tab by default
+    const defaultTab = document.querySelector('.tab-link');
+    if (defaultTab) {
+        defaultTab.click();
+    }
 });
 
 // Password strength checker (bonus feature)
@@ -286,4 +292,33 @@ function filterGlossary() {
 // Console easter egg
 console.log('%c🔐 Вітаємо в світі кібербезпеки!', 'font-size: 20px; color: #2563eb; font-weight: bold;');
 console.log('%cПам\'ятайте: безпека починається з вас!', 'font-size: 14px; color: #10b981;');
-console.log('%cПроект розширено: 15+ розділів, 10 питань квізу, 20+ термінів глосарію', 'font-size: 12px; color: #64748b;');
+    console.log('%cПроект розширено: 15+ розділів, 10 питань квізу, 20+ термінів глосарію', 'font-size: 12px; color: #64748b;');
+
+// Tab functionality for Messengers and Browsers section
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Set default active tab on load
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Other existing DOMContentLoaded logic...
+
+    // Open the first tab by default
+    const defaultTab = document.querySelector('.tab-link');
+    if (defaultTab) {
+        defaultTab.click();
+    }
+});
