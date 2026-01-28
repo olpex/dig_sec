@@ -400,3 +400,18 @@ window.addEventListener('scroll', () => {
     const progress = (window.scrollY / totalHeight) * 100;
     progressBar.style.width = progress + '%';
 });
+
+// Hamburger Menu Functionality
+const hamburger = document.getElementById('hamburgerBtn');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
