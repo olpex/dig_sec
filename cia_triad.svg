@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="150" height="150">
+  <!-- Triangle -->
+  <polygon points="150,50 250,220 50,220" fill="none" stroke="#2563eb" stroke-width="8" stroke-linejoin="round"/>
+  
+  <!-- Vertices Circles -->
+  <circle cx="150" cy="50" r="30" fill="#2563eb" />
+  <circle cx="250" cy="220" r="30" fill="#2563eb" />
+  <circle cx="50" cy="220" r="30" fill="#2563eb" />
+  
+  <!-- Text Labels -->
+  <text x="150" y="55" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">C</text>
+  <text x="250" y="225" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">I</text>
+  <text x="50" y="225" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">A</text>
+  
+  <!-- Full Text (Optional, small) -->
+  <text x="150" y="20" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">Confidentiality</text>
+  <text x="260" y="260" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">Integrity</text>
+  <text x="40" y="260" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">Availability</text>
+</svg>
