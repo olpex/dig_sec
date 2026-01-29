@@ -169,7 +169,7 @@ const observer = new IntersectionObserver((entries) => {
 // McCumber Matrix Tab Logic
 document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.matrix-tab');
-    const views = document.querySelectorAll('.matrix-view');
+    const grids = document.querySelectorAll('.matrix-cards-grid');
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -179,13 +179,21 @@ document.addEventListener('DOMContentLoaded', () => {
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
 
-            // Update views
-            views.forEach(view => {
-                view.classList.remove('active');
-                if (view.id === `goal-${goal}`) {
-                    view.classList.add('active');
+            // Update grids
+            grids.forEach(grid => {
+                grid.classList.remove('active');
+                if (grid.id === `goal-${goal}`) {
+                    grid.classList.add('active');
                 }
             });
+        });
+    });
+
+    // Toggle Flashcards on click (for mobile)
+    const flashcards = document.querySelectorAll('.flashcard');
+    flashcards.forEach(card => {
+        card.addEventListener('click', function (e) {
+            this.classList.toggle('flipped');
         });
     });
 });
