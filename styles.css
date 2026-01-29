@@ -1310,9 +1310,138 @@ tr:hover {
     top: -10px;
     right: -10px;
     font-size: 5rem;
-    font-weight: 800;
     color: rgba(255, 255, 255, 0.03);
     line-height: 1;
+}
+
+/* Password Security Section */
+.password-content {
+    display: grid;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.rule {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: var(--transition);
+}
+
+.rule:hover {
+    transform: translateY(-3px);
+}
+
+.rule.good {
+    border-left: 3px solid var(--success);
+}
+
+.rule.bad {
+    border-left: 3px solid var(--danger);
+}
+
+.rule.good .rule-icon {
+    color: var(--success);
+}
+
+.rule.bad .rule-icon {
+    color: var(--danger);
+}
+
+.rule-icon {
+    font-size: 1.25rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.rule h3,
+.rule strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.rule p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Password Managers */
+.managers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.manager {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.manager:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+}
+
+.manager strong {
+    color: var(--primary);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Worst Passwords */
+.worst-passwords {
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.bad-passwords {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.bad-pwd {
+    background: rgba(15, 23, 42, 0.6);
+    color: #fca5a5;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.warning-text {
+    color: var(--danger);
+    font-weight: 600;
 }
 
 /* Ransomware Section */

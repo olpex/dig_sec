@@ -168,7 +168,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Apply animation to cards and elements
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item, .iot-tip, .social-do, .social-dont, .social-threat, .wifi-risk, .phishing-sign, .step, .resource-link, .glossary-item, .ransomware-card, .type-card, .protection-item, .mobile-card, .right-item, .privacy-check');
+    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item, .iot-tip, .social-do, .social-dont, .social-threat, .wifi-risk, .phishing-sign, .step, .resource-link, .glossary-item, .ransomware-card, .type-card, .protection-item, .mobile-card, .right-item, .privacy-check, .rule, .manager, .bad-passwords');
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';
