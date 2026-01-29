@@ -401,67 +401,122 @@ nav a.active::after {
 /* Threats Section */
 .threats-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1280px;
     margin: 0 auto;
+}
+
+.section.dark {
+    background: var(--bg-darker);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .threat {
     background: var(--bg-card);
     border: 1px solid var(--glass-border);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: var(--radius-lg);
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.threat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--danger), var(--waarning));
+    opacity: 0;
     transition: var(--transition);
 }
 
 .threat:hover {
-    border-color: var(--danger);
-    transform: translateX(5px);
-    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.15);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.threat:hover::before {
+    opacity: 1;
 }
 
 .threat-icon {
-    font-size: 2.5rem;
-    width: 64px;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
+    font-size: 2rem;
+    width: 56px;
+    height: 56px;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.threat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .threat h3 {
     color: var(--text-main);
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.threat p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 .severity {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-top: 1rem;
+    align-self: flex-start;
 }
 
 .severity.high {
-    background: rgba(239, 68, 68, 0.2);
+    background: rgba(239, 68, 68, 0.15);
     color: #fca5a5;
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .severity.medium {
-    background: rgba(245, 158, 11, 0.2);
+    background: rgba(245, 158, 11, 0.15);
     color: #fcd34d;
     border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.severity::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
 }
 
 /* Forms & Password Checker */
