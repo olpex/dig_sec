@@ -166,6 +166,28 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+// Card Spotlight Effect
+document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.card, .threat, .rule, .mobile-card, .os-card, .vpn-card');
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
+
 // Apply animation to cards and elements
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item, .iot-tip, .social-do, .social-dont, .social-threat, .wifi-risk, .phishing-sign, .step, .resource-link, .glossary-item, .ransomware-card, .type-card, .protection-item, .mobile-card, .right-item, .privacy-check, .rule, .manager, .bad-passwords');
