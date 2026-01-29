@@ -166,6 +166,30 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// McCumber Matrix Tab Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.matrix-tab');
+    const views = document.querySelectorAll('.matrix-view');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const goal = tab.getAttribute('data-goal');
+
+            // Update tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Update views
+            views.forEach(view => {
+                view.classList.remove('active');
+                if (view.id === `goal-${goal}`) {
+                    view.classList.add('active');
+                }
+            });
+        });
+    });
+});
+
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');

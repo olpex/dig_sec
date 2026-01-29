@@ -195,6 +195,84 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="mccumber-matrix-container glass" style="margin-top: 4rem;">
+						<h3 style="text-align: center; margin-bottom: 2rem;">Матриця інструментів та методів</h3>
+
+						<div class="matrix-tabs">
+							<button class="matrix-tab active" data-goal="confidentiality">🔐 Конфіденційність</button>
+							<button class="matrix-tab" data-goal="integrity">✅ Цілісність</button>
+							<button class="matrix-tab" data-goal="availability">🌐 Доступність</button>
+						</div>
+
+						<div class="matrix-grid" id="matrixContainer">
+							<div class="matrix-view active" id="goal-confidentiality">
+								<div class="matrix-header"></div>
+								<div class="matrix-header">📥 Зберігання</div>
+								<div class="matrix-header">📡 Передача</div>
+								<div class="matrix-header">⚙️ Обробка</div>
+
+								<div class="matrix-label">💻 Технології</div>
+								<div class="matrix-cell">BitLocker, AES-256, VeraCrypt</div>
+								<div class="matrix-cell">VPN, HTTPS, TLS, Signal</div>
+								<div class="matrix-cell">Intel SGX, Data Masking</div>
+
+								<div class="matrix-label">📜 Політики</div>
+								<div class="matrix-cell">ACL, Класифікація даних</div>
+								<div class="matrix-cell">Email Encryption Policy</div>
+								<div class="matrix-cell">NDAs, Privacy Policy</div>
+
+								<div class="matrix-label">👥 Люди</div>
+								<div class="matrix-cell">Гігієна паролів, курси</div>
+								<div class="matrix-cell">Захист від фішингу</div>
+								<div class="matrix-cell">Перевірка персоналу</div>
+							</div>
+
+							<div class="matrix-view" id="goal-integrity">
+								<div class="matrix-header"></div>
+								<div class="matrix-header">📥 Зберігання</div>
+								<div class="matrix-header">📡 Передача</div>
+								<div class="matrix-header">⚙️ Обробка</div>
+
+								<div class="matrix-label">💻 Технології</div>
+								<div class="matrix-cell">SHA-256, Hashing, ZFS</div>
+								<div class="matrix-cell">Digital Signatures, HMAC</div>
+								<div class="matrix-cell">ECC Memory, DB Constraints</div>
+
+								<div class="matrix-label">📜 Політики</div>
+								<div class="matrix-cell">Change Control Policy</div>
+								<div class="matrix-cell">Network Integrity Policy</div>
+								<div class="matrix-cell">SDLC Standards</div>
+
+								<div class="matrix-label">👥 Люди</div>
+								<div class="matrix-cell">Внутрішній аудит</div>
+								<div class="matrix-cell">Перевірка сигнатур ПЗ</div>
+								<div class="matrix-cell">Процеси Code Review</div>
+							</div>
+
+							<div class="matrix-view" id="goal-availability">
+								<div class="matrix-header"></div>
+								<div class="matrix-header">📥 Зберігання</div>
+								<div class="matrix-header">📡 Передача</div>
+								<div class="matrix-header">⚙️ Обробка</div>
+
+								<div class="matrix-label">💻 Технології</div>
+								<div class="matrix-cell">RAID, Backups, Snapshots</div>
+								<div class="matrix-cell">Load Balancers, CDN</div>
+								<div class="matrix-cell">Failover Clusters, AWS ASG</div>
+
+								<div class="matrix-label">📜 Політики</div>
+								<div class="matrix-cell">Backup Policy, SLA</div>
+								<div class="matrix-cell">Business Continuity (BCP)</div>
+								<div class="matrix-cell">Maintenance Windows</div>
+
+								<div class="matrix-label">👥 Люди</div>
+								<div class="matrix-cell">DR Drilling (Навчання)</div>
+								<div class="matrix-cell">Чергові (NOC/SOC)</div>
+								<div class="matrix-cell">Планування ресурсів</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 

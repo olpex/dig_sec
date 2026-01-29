@@ -685,6 +685,117 @@ nav a.active {
     font-style: italic;
 }
 
+/* McCumber Matrix Styles */
+.mccumber-matrix-container {
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+}
+
+.matrix-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.matrix-tab {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 0.75rem 1.5rem;
+    color: var(--text-muted);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.matrix-tab:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.matrix-tab.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.matrix-grid {
+    position: relative;
+    min-height: 400px;
+}
+
+.matrix-view {
+    display: none;
+    grid-template-columns: 120px repeat(3, 1fr);
+    gap: 1rem;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.matrix-view.active {
+    display: grid;
+}
+
+.matrix-header {
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.matrix-label {
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+}
+
+.matrix-cell {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: var(--transition);
+    color: var(--text-light);
+}
+
+.matrix-cell:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .matrix-view {
+        grid-template-columns: 1fr;
+    }
+
+    .matrix-header:first-child,
+    .matrix-label {
+        display: none;
+    }
+
+    .matrix-header {
+        background: rgba(59, 130, 246, 0.1);
+        border-radius: var(--radius-sm);
+        margin-top: 1rem;
+    }
+}
+
 @media (max-width: 992px) {
     .mccumber-grid {
         grid-template-columns: 1fr;
