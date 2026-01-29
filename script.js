@@ -168,7 +168,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Apply animation to cards and elements
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item');
+    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item, .iot-tip, .social-do, .social-dont, .social-threat, .wifi-risk, .phishing-sign, .step, .resource-link, .glossary-item');
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -209,7 +209,7 @@ const strengthBar = document.getElementById('strengthBar');
 const strengthText = document.getElementById('strengthText');
 
 if (passwordInput) {
-    passwordInput.addEventListener('input', function() {
+    passwordInput.addEventListener('input', function () {
         const password = this.value;
         updatePasswordStrength(password);
         updateCriteria(password);
@@ -318,7 +318,7 @@ function filterGlossary() {
 // Console easter egg
 console.log('%c🔐 Вітаємо в світі кібербезпеки!', 'font-size: 20px; color: #2563eb; font-weight: bold;');
 console.log('%cПам\'ятайте: безпека починається з вас!', 'font-size: 14px; color: #10b981;');
-    console.log('%cПроект розширено: 15+ розділів, 10 питань квізу, 20+ термінів глосарію', 'font-size: 12px; color: #64748b;');
+console.log('%cПроект розширено: 15+ розділів, 10 питань квізу, 20+ термінів глосарію', 'font-size: 12px; color: #64748b;');
 
 // Tab functionality for Messengers and Browsers section
 function openTab(evt, tabName) {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Back to Top Button functionality
 const backToTopBtn = document.getElementById('backToTopBtn');
 
-window.onscroll = function() {
+window.onscroll = function () {
     scrollFunction();
 };
 
@@ -386,7 +386,7 @@ const observerNav = new IntersectionObserver((entries, observerNav) => {
                 }
             });
         }
-    } 
+    });
 }, options);
 
 sections.forEach(section => {
