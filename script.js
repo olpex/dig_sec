@@ -178,7 +178,7 @@ window.addEventListener('scroll', () => {
 
 // Card Spotlight Effect
 document.addEventListener('mousemove', (e) => {
-    const cards = document.querySelectorAll('.card, .threat, .rule, .mobile-card, .os-card, .vpn-card');
+    const cards = document.querySelectorAll('.card, .threat, .rule, .mobile-card, .os-card, .vpn-card, .dimension-card');
     cards.forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -190,7 +190,7 @@ document.addEventListener('mousemove', (e) => {
 
 // Apply animation to cards and elements
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item, .iot-tip, .social-do, .social-dont, .social-threat, .wifi-risk, .phishing-sign, .step, .resource-link, .glossary-item, .ransomware-card, .type-card, .protection-item, .mobile-card, .right-item, .privacy-check, .rule, .manager, .bad-passwords');
+    const animatedElements = document.querySelectorAll('.card, .principle, .threat, .tip, .quiz-question, .comparison-table, .hardening-tips li, .os-card, .vpn-card, .provider-item, .iot-tip, .social-do, .social-dont, .social-threat, .wifi-risk, .phishing-sign, .step, .resource-link, .glossary-item, .ransomware-card, .type-card, .protection-item, .mobile-card, .right-item, .privacy-check, .rule, .manager, .bad-passwords, .mccumber-img, .dimension-card');
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';

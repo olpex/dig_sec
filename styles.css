@@ -467,7 +467,8 @@ nav a.active {
 .rule,
 .mobile-card,
 .os-card,
-.vpn-card {
+.vpn-card,
+.dimension-card {
     position: relative;
 }
 
@@ -476,7 +477,8 @@ nav a.active {
 .rule::after,
 .mobile-card::after,
 .os-card::after,
-.vpn-card::after {
+.vpn-card::after,
+.dimension-card::after {
     content: '';
     position: absolute;
     top: 0;
@@ -497,7 +499,8 @@ nav a.active {
 .rule:hover::after,
 .mobile-card:hover::after,
 .os-card:hover::after,
-.vpn-card:hover::after {
+.vpn-card:hover::after,
+.dimension-card:hover::after {
     opacity: 1;
 }
 
@@ -583,6 +586,69 @@ nav a.active {
     position: absolute;
     left: 0;
     font-weight: bold;
+}
+
+/* McCumber Cube Section */
+.mccumber-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mccumber-image-box {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: visible;
+}
+
+.mccumber-img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+}
+
+.mccumber-img:hover {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    box-shadow: var(--shadow-glow), 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.mccumber-text .section-intro {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.cube-dimensions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.dimension-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.dimension-card:hover {
+    transform: translateX(10px);
+    border-color: var(--primary);
+}
+
+.dimension-card h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .mccumber-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }
 
 /* Principles Grid */
