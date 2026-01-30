@@ -2159,3 +2159,55 @@ tr:hover {
     font-weight: 500;
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
+
+/* Integrated Privacy Tools Styles */
+.auth-grid,
+.dns-grid,
+.encryption-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.auth-item,
+.dns-item,
+.enc-tool {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.auth-item:hover,
+.dns-item:hover,
+.enc-tool:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.auth-item strong,
+.dns-item strong,
+.enc-tool strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.auth-item p,
+.dns-item p,
+.enc-tool p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.two-factor-auth,
+.file-encryption,
+.dns-protection {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
